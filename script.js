@@ -1,50 +1,68 @@
 var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
+    el: '#app',
+    data: {
+        message: 'Hello Vue!'
+    }
 })
 
 var app2 = new Vue({
-  el: '#app-2',
-  data: {
-    message: 'You loaded this page on ' + new Date()
-  }
+    el: '#app-2',
+    data: {
+        message: 'You loaded this page on ' + new Date()
+    }
 })
 
 var app3 = new Vue({
-  el: '#app-3',
-  data: {
-    seen: true //if seen is false, will not show
-  }
+    el: '#app-3',
+    data: {
+        seen: true //if seen is false, will not show
+    }
 })
 
 var app4 = new Vue({
-  el: '#app-4',
-  data: {
-    todos: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue' },
-      { text: 'Build something awesome' }
-    ]
-  }
+    el: '#app-4',
+    data: {
+        todos: [
+            { text: 'Learn JavaScript' },
+            { text: 'Learn Vue' },
+            { text: 'Build something awesome' }
+        ]
+    }
 })
 
 var app5 = new Vue({
-  el: '#app-5',
-  data: {
-    message: 'Push the button!'
-  },
-  methods: {
-    reverseMessage: function () {
-      this.message = this.message.split('').reverse().join('')
+    el: '#app-5',
+    data: {
+        message: 'Push the button!'
+    },
+    methods: {
+        reverseMessage: function() {
+            this.message = this.message.split('').reverse().join('')
+        }
     }
-  }
 })
 
 var app6 = new Vue({
-  el: '#app-6',
-  data: {
-    message: 'Two-way binding'
-  }
+    el: '#app-6',
+    data: {
+        message: 'Two-way binding'
+    }
+})
+
+// COMPONENTS
+Vue.component('todo-item', {
+    // The todo-item component now accepts a "prop", which is like a custom attribute.
+    // This prop is called todo.
+    props: ['todo'],
+    template: '<li>{{ todo.text }}</li>'
+})
+var app7 = new Vue({
+    el: '#app-7',
+    data: {
+        groceryList: [
+            { text: 'Vegetables' },
+            { text: 'Cheese' },
+            { text: 'Whatever else humans are supposed to eat' }
+        ]
+    }
 })
