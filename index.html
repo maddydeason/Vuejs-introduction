@@ -8,7 +8,7 @@
 
 <body>
     <div id="app">
-        {{ message }}
+        <h1>{{ message }}</h1>
     </div>
 
     <div id="app-2">
@@ -17,6 +17,15 @@
 
     <div id="app-3">
     	<p v-if="seen">Now you see me</p>
+	</div>
+
+	<div id="app-4">
+		<h3>To do list</h3>
+		<ol>
+			<li v-for="todo in todos">
+				{{ todo.text }}
+			</li>
+		</ol>
 	</div>
     
     <script src="script.js"></script>
