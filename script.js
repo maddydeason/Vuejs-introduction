@@ -15,5 +15,6 @@ var app2 = new Vue({
 var app3 = new Vue({
   el: '#app-3',
   data: {
+    seen: true //if seen is false, will not show
   }
 })
